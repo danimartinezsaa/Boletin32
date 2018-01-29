@@ -6,6 +6,7 @@
 package comercio;
 
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,21 +47,23 @@ public class MetodosArray{
 
     public static void nombrePrecio(Ventas array_ventas[], Producto array_productos[], Precio array_precios[]){
         
+        numeroVenta=JOptionPane.showInputDialog("inserte número venta:");
+        
         for(int i=0;i<array_ventas.length;i++){
-            numeroVenta=array_ventas[i].getNumeroVenta();
-            referenciaProducto=array_ventas[i].getReferenciaProducto();
-            for(int u=0;u<array_productos.length;u++){
-                if(referenciaProducto.equals(array_productos[u].getReferenciaProducto())){
-                    nombre=array_productos[u].getNombreProducto();
-                    referenciaPrecio=array_productos[u].getReferenciaPrecio();
-                    for(int x=0;x<array_precios.length;x++){
-                        if(referenciaPrecio.equals(array_precios[x].getReferenciaPrecio())){
-                            precio=array_precios[x].getPrecio();
+            if(numeroVenta.equals(array_ventas[i].getNumeroVenta())){
+                referenciaProducto=array_ventas[i].getReferenciaProducto();
+                for(int u=0;u<array_productos.length;u++){
+                     if(referenciaProducto.equals(array_productos[u].getReferenciaProducto())){
+                        nombre=array_productos[u].getNombreProducto();
+                        referenciaPrecio=array_productos[u].getReferenciaPrecio();
+                        for(int x=0;x<array_precios.length;x++){
+                            if(referenciaPrecio.equals(array_precios[x].getReferenciaPrecio())){
+                                precio=array_precios[x].getPrecio();
+                            }
                         }
                     }
                 }
             }
-            System.out.println("Referencia: "+referenciaProducto+", "+"Nombre: "+nombre+", "+"Precio: "+precio);
         }
     }
 }

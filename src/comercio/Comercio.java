@@ -29,7 +29,7 @@ public class Comercio{
         
         MetodosArray.crear(array_ventas, array_productos, array_precios, array_ticket);
         MetodosArray.nombrePrecio(array_ventas, array_productos, array_precios);
-
+        System.out.println("Número venta: "+MetodosArray.numeroVenta+", "+"Nombre: "+MetodosArray.nombre+", "+"Precio: "+MetodosArray.precio);
     }
     
 }
