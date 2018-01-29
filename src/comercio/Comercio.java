@@ -28,6 +28,7 @@ public class Comercio{
         }
         
         MetodosArray.crear(array_ventas, array_productos, array_precios, array_ticket);
+        MetodosArray.nombrePrecio(array_ventas, array_productos, array_precios);
 
     }
     
