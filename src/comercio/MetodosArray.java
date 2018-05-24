@@ -10,8 +10,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class MetodosArray{
@@ -47,8 +45,9 @@ public class MetodosArray{
 
         try{
             for(int i=0; i<precio.length; i++){
-                conexion.prepareStatement("insert into Ticket values('"+precio[i].getReferenciaPrecio()+"'"
+                st=conexion.prepareStatement("insert into Precio values('"+precio[i].getReferenciaPrecio()+"'"
                         +","+"'"+precio[i].getPrecio()+"'"+");");
+                st.execute();
             }
         }catch(SQLException ex){
             System.out.println("Error: "+ex.getMessage());
@@ -62,8 +61,9 @@ public class MetodosArray{
 
         try{
             for(int i=0; i<prod.length; i++){
-                conexion.prepareStatement("insert into Ticket values('"+prod[i].getReferenciaProducto()+"'"
+                st=conexion.prepareStatement("insert into Producto values('"+prod[i].getReferenciaProducto()+"'"
                         +","+"'"+prod[i].getNombreProducto()+"'"+","+"'"+prod[i].getReferenciaPrecio()+"'"+");");
+                st.execute();
             }
         }catch(SQLException ex){
             System.out.println("Error: "+ex.getMessage());
@@ -77,8 +77,9 @@ public class MetodosArray{
 
         try{
             for(int i=0; i<ven.length; i++){
-                conexion.prepareStatement("insert into Ticket values('"+ven[i].getNumeroVenta()+"'"
+                st=conexion.prepareStatement("insert into Ventas values('"+ven[i].getNumeroVenta()+"'"
                         +","+"'"+ven[i].getReferenciaProducto()+"'"+","+"'"+ven[i].getCantidade()+"'"+");");
+                st.execute();
             }
         }catch(SQLException ex){
             System.out.println("Error: "+ex.getMessage());

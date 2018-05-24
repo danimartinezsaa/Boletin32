@@ -5,7 +5,6 @@
  */
 package comercio;
 
-import java.util.Arrays;
 
 /**
  *
